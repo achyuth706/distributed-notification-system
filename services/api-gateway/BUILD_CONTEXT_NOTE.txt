@@ -1,0 +1,1 @@
+Docker build context must be ./services (not ./services/api-gateway). Update docker-compose.yml accordingly.
