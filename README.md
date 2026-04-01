@@ -14,15 +14,15 @@ A production-grade, event-driven notification delivery platform built with Sprin
 │                       API Gateway  :8080                         │
 │       REST API · Kafka Producer · Redis Rate Limiting            │
 │            WebSocket Broadcast · Swagger UI                      │
-└────────┬─────────────────────┬──────────────────┬───────────────┘
+└────────┬─────────────────────┬──────────────────┬────────────────┘
          │                     │                  │
   notifications.email  notifications.sms  notifications.push
          │                     │                  │
-┌────────▼─────────────────────▼──────────────────▼───────────────┐
+┌────────▼─────────────────────▼──────────────────▼────────────────┐
 │                  Notification Service  :8081                     │
 │      Kafka Consumers · Retry (exp backoff) · Micrometer          │
 │      Template Engine · Dead-Letter Publisher                     │
-└────────┬─────────────────────┬──────────────────┬───────────────┘
+└────────┬─────────────────────┬──────────────────┬────────────────┘
          │                     │                  │
 ┌────────▼────────┐  ┌─────────▼────────┐  ┌─────▼──────────────┐
 │  Email  :8082   │  │   SMS   :8083    │  │   Push   :8084     │
