@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nds-config
+  namespace: notification-system
+data:
+  KAFKA_BOOTSTRAP_SERVERS: "kafka:9092"
+  POSTGRES_DB: "notifications_db"
+  POSTGRES_USER: "notif_user"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  SPRING_PROFILES_ACTIVE: "kubernetes"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: nds-secrets
+  namespace: notification-system
+type: Opaque
+stringData:
+  POSTGRES_PASSWORD: "notif_secret"
+  POSTGRES_URL: "jdbc:postgresql://postgres:5432/notifications_db"
